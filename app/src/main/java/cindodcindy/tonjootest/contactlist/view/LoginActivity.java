@@ -38,13 +38,15 @@ public class LoginActivity extends AppCompatActivity {
         editText_password=findViewById(R.id.et_password);
         button_submit=findViewById(R.id.btn_login_submit);
         sharedPrefHandleUser = new SharedPrefHandleUser(LoginActivity.this);
-
+/*
         if (sharedPrefHandleUser.getSPSudahLogin()){
             startActivity(new Intent(LoginActivity.this, MenuActivity.class)
                     .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK));
             finish();
         }
 
+
+ */
         button_submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -74,12 +76,18 @@ public class LoginActivity extends AppCompatActivity {
 
                     sharedPrefHandleUser.setSpUsername(SharedPrefHandleUser.SP_USERNAME,username);
                     sharedPrefHandleUser.setSpPassword(SharedPrefHandleUser.SP_PASSWORD,password);
+                    sharedPrefHandleUser.setSpToken(SharedPrefHandleUser.SP_TOKEN,response.body().getToken());
 
                     // Shared Pref ini berfungsi untuk menjadi trigger session login
-                    sharedPrefHandleUser.saveSPBoolean(SharedPrefHandleUser.SP_SUDAH_LOGIN, true);
-                    startActivity(new Intent(context, MenuActivity.class)
-                            .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK));
+                   // sharedPrefHandleUser.saveSPBoolean(SharedPrefHandleUser.SP_SUDAH_LOGIN, true);
+                    Intent intent = new Intent(LoginActivity.this,MenuActivity.class);
+                    startActivity(intent);
                     finish();
+                  /*  startActivity(new Intent(getApplicationContext(), MenuActivity.class)
+                           .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK));
+                    finish();
+
+                      */
 
                 }
 

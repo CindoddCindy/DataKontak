@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
     <androidx.cardview.widget.CardView
         android:layout_margin="10dp"
         android:padding="5dp"
@@ -26,6 +26,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
                 <ImageView
+                    android:id="@+id/iv_image"
                     android:layout_gravity="center"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
@@ -44,8 +45,9 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
                 <TextView
-                    android:textStyle="normal"
-                    android:layout_marginTop="10dp"
+                    android:id="@+id/tv_first_name"
+                    android:textStyle="bold"
+                    android:layout_marginTop="1dp"
                     android:textSize="12dp"
                     android:padding="5dp"
                     android:textColor="@color/FontColor"
@@ -58,8 +60,9 @@
 
                 </TextView>
                 <TextView
-                    android:textStyle="normal"
-                    android:layout_marginTop="10dp"
+                    android:id="@+id/tv_last_name"
+                    android:textStyle="bold"
+                    android:layout_marginTop="1dp"
                     android:textSize="12dp"
                     android:padding="5dp"
                     android:textColor="@color/FontColor"
@@ -72,8 +75,9 @@
 
                 </TextView>
                 <TextView
-                    android:textStyle="normal"
-                    android:layout_marginTop="10dp"
+                    android:id="@+id/tv_email"
+                    android:textStyle="bold"
+                    android:layout_marginTop="1dp"
                     android:textSize="12dp"
                     android:padding="5dp"
                     android:textColor="@color/FontColor"
@@ -86,8 +90,9 @@
 
                 </TextView>
                 <TextView
-                    android:textStyle="normal"
-                    android:layout_marginTop="10dp"
+                    android:id="@+id/tv_gender"
+                    android:textStyle="bold"
+                    android:layout_marginTop="1dp"
                     android:textSize="12dp"
                     android:padding="5dp"
                     android:textColor="@color/FontColor"
