@@ -4,7 +4,7 @@ package cindodcindy.tonjootest.contactlist.model;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class ResponRegis {
+public class ResponLoginTonjo {
 
     @SerializedName("token")
     @Expose
@@ -14,14 +14,14 @@ public class ResponRegis {
      * No args constructor for use in serialization
      * 
      */
-    public ResponRegis() {
+    public ResponLoginTonjo() {
     }
 
     /**
      * 
      * @param token
      */
-    public ResponRegis(String token) {
+    public ResponLoginTonjo(String token) {
         super();
         this.token = token;
     }
@@ -34,7 +34,7 @@ public class ResponRegis {
         this.token = token;
     }
 
-    public ResponRegis withToken(String token) {
+    public ResponLoginTonjo withToken(String token) {
         this.token = token;
         return this;
     }

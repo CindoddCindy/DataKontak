@@ -2,7 +2,7 @@ package cindodcindy.tonjootest.contactlist.retrofit;
 
 import com.google.gson.JsonObject;
 
-import cindodcindy.tonjootest.contactlist.model.ResponRegis;
+import cindodcindy.tonjootest.contactlist.model.ResponLoginTonjo;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.Headers;
@@ -14,6 +14,6 @@ public interface RetrofitMethods {
     })
 
     @POST("auth/signup")
-    Call<ResponRegis> registerUser(@Body JsonObject body);
+    Call<ResponLoginTonjo> registerUser(@Body JsonObject body);
 
 }
