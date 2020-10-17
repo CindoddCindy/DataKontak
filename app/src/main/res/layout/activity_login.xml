@@ -8,6 +8,22 @@
     android:layout_gravity="center"
     android:gravity="center"
     tools:context=".view.LoginActivity">
+
+    <TextView
+        android:textStyle="normal"
+        android:layout_marginTop="10dp"
+        android:textSize="15dp"
+        android:padding="5dp"
+        android:textColor="@color/FontColor"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:text="Login">
+
+    </TextView>
+
     <TextView
         android:textStyle="normal"
         android:layout_marginTop="10dp"
