@@ -13,7 +13,7 @@ public interface RetrofitMethods {
             "Content-Type:application/json"
     })
 
-    @POST("auth/signup")
+    @POST("authenticate")
     Call<ResponLoginTonjo> registerUser(@Body JsonObject body);
 
 }
