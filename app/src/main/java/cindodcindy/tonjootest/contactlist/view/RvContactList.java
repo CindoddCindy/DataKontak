@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
+import cindodcindy.tonjootest.contactlist.R;
+
 public class RvContactList extends AppCompatActivity {
 
     @Override
