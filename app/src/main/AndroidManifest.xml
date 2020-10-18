@@ -11,7 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ContactList">
-        <activity android:name=".view.AddContacts"></activity>
+        <activity android:name=".view.RvContactFromStorage"></activity>
+        <activity android:name=".view.SaveContactsToStorage" />
+        <activity android:name=".view.AddContacts" />
         <activity android:name=".view.RvContactList" />
         <activity android:name=".view.MenuActivity" />
         <activity android:name=".view.LoginActivity" />

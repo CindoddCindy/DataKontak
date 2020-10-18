@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
@@ -53,6 +54,13 @@ public class RecyclerViewContactList extends RecyclerView.Adapter<RecyclerViewCo
                 .load(datum.getAvatar())
                 .into(imageView);
 
+        holder.cardView_onKlik.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
 
     }
 
@@ -65,6 +73,7 @@ public class RecyclerViewContactList extends RecyclerView.Adapter<RecyclerViewCo
 
         public TextView textView_firstName, textView_last_name, textView_email, textView_gender;
         public ImageView imageView_image;
+        public CardView cardView_onKlik;
 
         public ChildContactsList(@NonNull View itemView) {
             super(itemView);
@@ -73,6 +82,7 @@ public class RecyclerViewContactList extends RecyclerView.Adapter<RecyclerViewCo
             textView_email=itemView.findViewById(R.id.tv_email);
             textView_gender=itemView.findViewById(R.id.tv_gender);
             imageView_image=itemView.findViewById(R.id.iv_image);
+            cardView_onKlik=itemView.findViewById(R.id.cv_on_klik);
         }
     }
 }

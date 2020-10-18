@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.SaveContactsToStorage">
+
+    <LinearLayout
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:textStyle="normal"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:textSize="15dp"
+            android:padding="5dp"
+            android:textColor="@color/FontColor"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="Save COntact To Device">
+
+        </TextView>
+
+        <TextView
+
+            android:textStyle="normal"
+            android:layout_marginTop="10dp"
+            android:textSize="12dp"
+            android:padding="5dp"
+            android:textColor="@color/FontColor"
+            android:layout_gravity="center"
+            android:gravity="left"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:dr="@drawable/ic_baseline_maximize_24"
+            android:text="First Name">
+
+        </TextView>
+
+        <TextView
+            android:padding="5dp"
+            android:gravity="left"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+        </TextView>
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:textStyle="normal"
+            android:layout_marginTop="10dp"
+            android:textSize="12dp"
+            android:padding="5dp"
+            android:textColor="@color/FontColor"
+            android:layout_gravity="center"
+            android:gravity="left"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Last Name">
+
+        </TextView>
+        <TextView
+            android:padding="5dp"
+            android:gravity="left"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+        </TextView>
+        <TextView
+            android:textStyle="normal"
+            android:layout_marginTop="10dp"
+            android:textSize="12dp"
+            android:padding="5dp"
+            android:textColor="@color/FontColor"
+            android:layout_gravity="center"
+            android:gravity="left"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="Email">
+
+        </TextView>
+
+        <TextView
+            android:padding="5dp"
+            android:gravity="left"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+        </TextView>
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:textStyle="normal"
+            android:layout_marginTop="10dp"
+            android:textSize="12dp"
+            android:padding="5dp"
+            android:textColor="@color/FontColor"
+            android:layout_gravity="center"
+            android:gravity="left"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Gender">
+
+        </TextView>
+        <TextView
+            android:padding="5dp"
+            android:gravity="left"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+        </TextView>
+
+
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:textStyle="normal"
+            android:layout_marginTop="10dp"
+            android:textSize="12dp"
+            android:padding="5dp"
+            android:textColor="@color/FontColor"
+            android:layout_gravity="center"
+            android:gravity="left"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Add Image">
+
+        </TextView>
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/ic_baseline_person_24"
+            >
+
+        </ImageView>
+
+
+
+        <TextView
+            android:id="@+id/btn_login_submit"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"
+            android:textSize="15dp"
+            android:padding="5dp"
+            android:textColor="@color/FontColor"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Save">
+
+        </TextView>
+
+
+
+
+
+    </LinearLayout>
+
+</ScrollView>

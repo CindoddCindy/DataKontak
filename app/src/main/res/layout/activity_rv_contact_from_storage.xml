@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".view.RvContactList">
+    tools:context=".view.RvContactFromStorage">
     <TextView
         android:textStyle="bold"
         android:layout_marginTop="10dp"
@@ -16,16 +16,15 @@
         android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Contact Online">
+        android:text="Contact From Storage">
 
     </TextView>
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_margin="5dp"
-        android:id="@+id/rv_list_kontak"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        >
+        android:orientation="vertical">
 
     </androidx.recyclerview.widget.RecyclerView>
 
