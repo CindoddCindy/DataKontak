@@ -47,6 +47,7 @@
         </TextView>
 
         <TextView
+            android:id="@+id/tv_save_storage_first_name"
             android:padding="5dp"
             android:gravity="left"
             android:layout_marginLeft="10dp"
@@ -75,7 +76,7 @@
             android:gravity="left"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-
+            android:id="@+id/tv_save_storage_last_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             >
@@ -98,6 +99,7 @@
 
         <TextView
             android:padding="5dp"
+            android:id="@+id/tv_save_storage_email"
             android:gravity="left"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
@@ -123,6 +125,7 @@
         <TextView
             android:padding="5dp"
             android:gravity="left"
+            android:id="@+id/tv_save_storage_gender"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:layout_width="match_parent"
@@ -148,6 +151,7 @@
         </TextView>
 
         <ImageView
+            android:id="@+id/iv_save_storage_image"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:src="@drawable/ic_baseline_person_24"
@@ -158,7 +162,7 @@
 
 
         <TextView
-            android:id="@+id/btn_login_submit"
+            android:id="@+id/tv_save_storage_submit"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:textStyle="bold"

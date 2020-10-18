@@ -57,22 +57,22 @@ public class AddContactData extends SQLiteOpenHelper {
 
 
     }
-    public void insertDataAnsw(String firstName, String lastName, String emailUser, String genderUser, String photoUser){
+    public void insertContactList(String firstName, String lastName, String emailUser, String genderUser, String photoUser){
         String insertData = "INSERT INTO "+ TABLENAME + " ("+ colFirstName +","+colLastName+","+colEmail+","+colGender+","+colPhoto+") VALUES ('"+firstName +"', '"+lastName+"','"+emailUser+"','"+genderUser+"','"+photoUser+"')";
         this.getWritableDatabase().execSQL(insertData);
     }
 
-    public void updateDataAnsw(int id,String firstName, String lastName, String emailUser, String genderUser, String photoUser ){
+    public void updateContactsList(int id,String firstName, String lastName, String emailUser, String genderUser, String photoUser ){
         String updateData = "UPDATE "+TABLENAME+ " SET "+ colFirstName + "= '"+firstName +"', "+colLastName + "= '"+lastName + "',"+colEmail+ "='"+emailUser+"',"+colGender+"='"+genderUser+"',"+colPhoto+"='"+photoUser+"' WHERE "+colIdContacts+" ="+id;
         this.getWritableDatabase().execSQL(updateData);
     }
 
-    public void deleteDataAnsw(int id){
+    public void deleteContactsList(int id){
         String deleteData = "DELETE FROM "+TABLENAME +" WHERE idCont="+id;
         this.getWritableDatabase().execSQL(deleteData);
     }
 
-    public PojoContacts getPojoContacts(int id){
+    public PojoContacts getContacts(int id){
         PojoContacts pojoContacts = null;
         String selectData = "SELECT * FROM "+TABLENAME + " WHERE idCont="+String.valueOf(id);
         Cursor data = this.getWritableDatabase().rawQuery(selectData, null);
@@ -83,7 +83,7 @@ public class AddContactData extends SQLiteOpenHelper {
         return pojoContacts;
     }
 
-    public List<PojoContacts> getAllConatacts(){
+    public List<PojoContacts> getAllContact(){
         List<PojoContacts> pojoContacts = new ArrayList<>();
         String selectData = "SELECT * FROM "+TABLENAME;
         Cursor data = this.getWritableDatabase().rawQuery(selectData, null);
@@ -96,7 +96,7 @@ public class AddContactData extends SQLiteOpenHelper {
         return pojoContacts;
     }
 
-    public List<PojoContacts> searchAns(String keyword) {
+    public List<PojoContacts> searchContact(String keyword) {
         List<PojoContacts> pojoAnsws = null;
         try {
             SQLiteDatabase sqLiteDatabase = getReadableDatabase();

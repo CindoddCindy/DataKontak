@@ -1,6 +1,8 @@
 package cindodcindy.tonjootest.contactlist.view.adapter;
 
 import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +19,7 @@ import java.util.List;
 
 import cindodcindy.tonjootest.contactlist.R;
 import cindodcindy.tonjootest.contactlist.model.Datum;
+import cindodcindy.tonjootest.contactlist.view.SaveContactsToStorage;
 
 public class RecyclerViewContactList extends RecyclerView.Adapter<RecyclerViewContactList.ChildContactsList> {
 
@@ -57,6 +60,15 @@ public class RecyclerViewContactList extends RecyclerView.Adapter<RecyclerViewCo
         holder.cardView_onKlik.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Bundle bundle = new Bundle();
+                bundle.putString("first_name", datum.getFirstName());
+                bundle.putString("last_name",datum.getLastName());
+                bundle.putString("email",datum.getEmail());
+                bundle.putString("gender",datum.getGender());
+                bundle.putString("image",datum.getAvatar());
+                Intent intent = new Intent(context, SaveContactsToStorage.class);
+                intent.putExtras(bundle);
+                context.startActivity(intent);
 
             }
         });
