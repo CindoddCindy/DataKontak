@@ -6,6 +6,23 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".view.ContactFromStorageList">
+    <TextView
+        android:id="@+id/tv_back_storage"
+        android:drawableLeft="@drawable/ic_baseline_arrow_back_24"
+        android:textStyle="normal"
+        android:layout_marginTop="10dp"
+        android:textSize="15dp"
+        android:padding="5dp"
+        android:textColor="@color/FontColor"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:text="Contact Storage">
+
+    </TextView>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/from_storage"
         android:layout_width="match_parent"

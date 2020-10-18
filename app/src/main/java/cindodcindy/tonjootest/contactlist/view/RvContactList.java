@@ -4,7 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -28,12 +31,23 @@ public class RvContactList extends AppCompatActivity {
     private RetrofitMethods retrofitMethod;
     private SharedPrefHandleUser sharedPrefHandleUser;
 
+    private TextView textView_back;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rv_contact_list);
         sharedPrefHandleUser=new SharedPrefHandleUser(RvContactList.this);
+        textView_back=findViewById(R.id.tv_back);
+        textView_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(RvContactList.this,MenuActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
 
         recyclerView = findViewById(R.id.rv_list_kontak);
          recyclerViewContactList= new RecyclerViewContactList(RvContactList.this,datumArrayList);
