@@ -12,13 +12,13 @@ public class PojoContacts {
 
     }
 
-    public PojoContacts(int idContact, String fisrtNameContact, String lastNameContact, String emailUserContact, String genderUserContact, String fotoUserContact) {
+    public PojoContacts(int idContact, String fisrtNameContact, String lastNameContact, String emailUserContact, String genderUserContact) {
         this.idContact = idContact;
         this.fisrtNameContact = fisrtNameContact;
         this.lastNameContact = lastNameContact;
         this.emailUserContact = emailUserContact;
         this.genderUserContact = genderUserContact;
-        this.fotoUserContact = fotoUserContact;
+        //this.fotoUserContact = fotoUserContact;
     }
 
     public int getIdContact() {

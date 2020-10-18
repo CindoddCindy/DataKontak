@@ -31,6 +31,7 @@ public class SaveContactsToStorage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_save_contacts_to_storage);
+        addContactData=new AddContactData(getApplicationContext());
 
         textView_first_name=findViewById(R.id.tv_save_storage_first_name);
         textView_last_name=findViewById(R.id.tv_save_storage_last_name);
@@ -57,6 +58,7 @@ public class SaveContactsToStorage extends AppCompatActivity {
             textView_submit.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+                    saveData();
 
                 }
             });
@@ -80,7 +82,7 @@ public class SaveContactsToStorage extends AppCompatActivity {
         else {
 
 
-            addContactData.insertContactList(textView_first_name.getText().toString(), textView_last_name.getText().toString(), textView_email.getText().toString(), textView_gender.getText().toString(),imageView_avatar.toString());
+            addContactData.insertContactList(textView_first_name.getText().toString(), textView_last_name.getText().toString(), textView_email.getText().toString(), textView_gender.getText().toString());
             Toast.makeText(getApplicationContext(), "Saved", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(SaveContactsToStorage.this, RvAdapterContactFromStorage.class);
             startActivity(intent);

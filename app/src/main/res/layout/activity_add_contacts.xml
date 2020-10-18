@@ -37,7 +37,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
-        android:dr="@drawable/ic_baseline_maximize_24"
         android:text="First Name">
 
     </TextView>
