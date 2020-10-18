@@ -15,7 +15,7 @@ import java.util.List;
 import cindodcindy.tonjootest.contactlist.model.PojoContacts;
 
 public class AddContactData extends SQLiteOpenHelper {
-    private static final int VERSIONCONTACT= 1;
+    private static final int VERSIONCONTACT= 2;
     private static final String DBNAMECONTACT= "db_contact";
     private static final String TABLENAMECONTACT = "contact_list";
 
@@ -24,7 +24,7 @@ public class AddContactData extends SQLiteOpenHelper {
     private static String colLastName = "lastName";
     private static String colEmail = "col_email";
     private static String colGender = "col_gender";
-    private static String colAvatar="col_avatar";
+    //private static String colAvatar="col_avatar";
 
     public AddContactData(Context context) {
         super(context, DBNAMECONTACT, null, VERSIONCONTACT);
@@ -39,7 +39,7 @@ public class AddContactData extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         String createTable = "CREATE TABLE " + TABLENAMECONTACT + " (" +
-                colIDContact + " INTEGER PRIMARY KEY AUTOINCREMENT, " + colFirstName + " TEXT," + colLastName + " TEXT, " + colEmail + " TEXT, " + colAvatar + " TEXT, " + colAvatar + " TEXT)";
+                colIDContact + " INTEGER PRIMARY KEY AUTOINCREMENT, " + colFirstName + " TEXT," + colLastName + " TEXT, " + colEmail + " TEXT,  " + colGender + " TEXT)";
         sqLiteDatabase.execSQL(createTable);
 
 
@@ -53,9 +53,34 @@ public class AddContactData extends SQLiteOpenHelper {
 
     }
 
-    public void insertDataAnsw(String firstName, String lastName, String userEmail, String usergender, String userAvatar){
-        String insertData = "INSERT INTO "+ TABLENAMECONTACT + " ("+ colFirstName +","+ colLastName+","+colEmail+","+ colGender+", "+colAvatar+") VALUES ('"+firstName +"', '"+lastName+"','"+userEmail+"','"+usergender+"','"+userAvatar+"')";
+    public void insertDataAnsw(String firstName, String lastName, String userEmail, String usergender){
+        String insertData = "INSERT INTO "+ TABLENAMECONTACT + " ("+ colFirstName +","+ colLastName+","+colEmail+","+ colGender+") VALUES ('"+firstName +"', '"+lastName+"','"+userEmail+"','"+usergender+"')";
         this.getWritableDatabase().execSQL(insertData);
     }
+
+    public PojoContacts getDataContact(int id){
+        PojoContacts pojoContacts = null;
+        String selectData = "SELECT * FROM "+TABLENAMECONTACT + " WHERE id_answ="+String.valueOf(id);
+        Cursor data = this.getWritableDatabase().rawQuery(selectData, null);
+        if(data.moveToFirst()){
+            pojoContacts = new PojoContacts(Integer.parseInt(data.getString(data.getColumnIndex(colIDContact))),
+                    data.getString(data.getColumnIndex(colFirstName)), data.getString(data.getColumnIndex(colLastName)),data.getString(data.getColumnIndex(colEmail)),data.getString(data.getColumnIndex(colGender)));
+        }
+        return pojoContacts;
+    }
+
+    public List<PojoContacts> getAllContacts(){
+        List<PojoContacts> pojoAnsws = new ArrayList<>();
+        String selectData = "SELECT * FROM "+TABLENAMECONTACT;
+        Cursor data = this.getWritableDatabase().rawQuery(selectData, null);
+        if(data.moveToFirst()){
+            do{
+                pojoAnsws.add(new PojoContacts(Integer.parseInt(data.getString(data.getColumnIndex(colIDContact))),
+                        data.getString(data.getColumnIndex(colFirstName)), data.getString(data.getColumnIndex(colLastName)),data.getString(data.getColumnIndex(colEmail)),data.getString(data.getColumnIndex(colGender))));
+            }while (data.moveToNext());
+        }
+        return pojoAnsws;
+    }
+
 
 }

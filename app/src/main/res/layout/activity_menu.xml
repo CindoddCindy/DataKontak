@@ -48,6 +48,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
             <ImageView
+                android:id="@+id/iv_add_kontak"
                 android:layout_gravity="center"
                 android:layout_width="100dp"
                 android:layout_height="100dp"

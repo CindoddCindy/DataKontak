@@ -39,11 +39,14 @@ public class LoginActivity extends AppCompatActivity {
         button_submit=findViewById(R.id.btn_login_submit);
         sharedPrefHandleUser = new SharedPrefHandleUser(LoginActivity.this);
 
+        /*
         if (sharedPrefHandleUser.getSPSudahLogin()){
             startActivity(new Intent(LoginActivity.this, MenuActivity.class)
                     .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK));
             finish();
         }
+
+         */
 
 
 
@@ -83,10 +86,14 @@ public class LoginActivity extends AppCompatActivity {
                     Intent intent = new Intent(LoginActivity.this,MenuActivity.class);
                     startActivity(intent);
                     finish();
-                    startActivity(new Intent(getApplicationContext(), MenuActivity.class)
+
+               /*     startActivity(new Intent(getApplicationContext(), MenuActivity.class)
                            .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK));
                     finish();
 
+
+
+                */
 
 
                 }

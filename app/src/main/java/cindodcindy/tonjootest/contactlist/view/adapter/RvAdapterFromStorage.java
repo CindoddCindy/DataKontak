@@ -10,35 +10,33 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+
 import java.util.List;
 
 import cindodcindy.tonjootest.contactlist.R;
 import cindodcindy.tonjootest.contactlist.model.PojoContacts;
-import cindodcindy.tonjootest.contactlist.sqlite.AddContactData;
 
-public class RvAdapterContactFromStorage extends RecyclerView.Adapter<RvAdapterContactFromStorage.StorageChild> {
-
+public class RvAdapterFromStorage extends RecyclerView.Adapter<RvAdapterFromStorage.ChildFromStorage> {
     public Context context;
     public List<PojoContacts> pojoContacts;
-    public AddContactData addContactData;
 
-    public RvAdapterContactFromStorage(Context context, List<PojoContacts>pojoContacts){
+    public RvAdapterFromStorage(Context context, List<PojoContacts>pojoContacts){
         this.context=context;
         this.pojoContacts=pojoContacts;
     }
 
     @NonNull
     @Override
-    public StorageChild onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ChildFromStorage onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View mView = LayoutInflater.from(parent.getContext()).inflate(R.layout.save_contact, parent, false);
-        StorageChild storageChild = new StorageChild(mView);
+        ChildFromStorage storageChild = new ChildFromStorage(mView);
 
         return storageChild;
-
     }
 
     @Override
-    public void onBindViewHolder(@NonNull StorageChild holder, int position) {
+    public void onBindViewHolder(@NonNull ChildFromStorage holder, int position) {
         final PojoContacts pojoContactss=pojoContacts.get(position);
 
 
@@ -46,6 +44,17 @@ public class RvAdapterContactFromStorage extends RecyclerView.Adapter<RvAdapterC
         holder.textView_lastName.setText(pojoContactss.getLastNameContact());
         holder.textView_email.setText(pojoContactss.getEmailUserContact());
         holder.textView_gender.setText(pojoContactss.getGenderUserContact());
+
+       /* holder.textView_url_image.setText(pojoContactss.getFotoUserContact());
+        ImageView imageView = holder.imageView_picture;
+
+        Glide.with(context)
+                .load(pojoContactss.getFotoUserContact())
+                .into(imageView);
+
+        */
+
+
 
 
     }
@@ -55,21 +64,20 @@ public class RvAdapterContactFromStorage extends RecyclerView.Adapter<RvAdapterC
         return pojoContacts.size();
     }
 
-    public  class StorageChild extends RecyclerView.ViewHolder{
+    public class ChildFromStorage extends  RecyclerView.ViewHolder{
 
-        public TextView textView_first_name, textView_lastName, textView_email, textView_gender;
+        public TextView textView_first_name, textView_lastName, textView_email, textView_gender, textView_url_image;
 
         public ImageView imageView_picture;
 
-
-        public StorageChild(@NonNull View itemView) {
+        public ChildFromStorage(@NonNull View itemView) {
             super(itemView);
-
             textView_first_name=itemView.findViewById(R.id.tv_to_storage_first_name);
             textView_lastName=itemView.findViewById(R.id.tv_to_storage_last_name);
             textView_email=itemView.findViewById(R.id.tv_to_storage_email);
             textView_gender=itemView.findViewById(R.id.tv_to_storage_gender);
             imageView_picture=itemView.findViewById(R.id.iv__to_storage_image);
+            textView_url_image=itemView.findViewById(R.id.tv_to_storage_image);
         }
     }
 }

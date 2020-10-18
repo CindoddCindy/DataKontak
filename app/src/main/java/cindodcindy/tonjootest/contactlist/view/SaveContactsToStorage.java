@@ -6,24 +6,21 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.resource.bitmap.InputStreamBitmapImageDecoderResourceDecoder;
 
 import cindodcindy.tonjootest.contactlist.R;
 import cindodcindy.tonjootest.contactlist.sqlite.AddContactData;
-import cindodcindy.tonjootest.contactlist.view.adapter.RvAdapterContactFromStorage;
 
 public class SaveContactsToStorage extends AppCompatActivity {
 
     private AddContactData addContactData;
 
 
-    private TextView textView_first_name, textView_last_name, textView_email, textView_gender;
+    private TextView textView_first_name, textView_last_name, textView_email, textView_gender,textView_avatar;
     private ImageView imageView_avatar;
     private TextView textView_submit;
 
@@ -39,6 +36,7 @@ public class SaveContactsToStorage extends AppCompatActivity {
         textView_gender=findViewById(R.id.tv_save_storage_gender);
         imageView_avatar=findViewById(R.id.iv_save_storage_image);
         textView_submit=findViewById(R.id.tv_save_storage_submit);
+        textView_avatar=findViewById(R.id.tv_image_url_avatar);
 
         if(getIntent().getExtras()!=null){
             /**
@@ -49,6 +47,7 @@ public class SaveContactsToStorage extends AppCompatActivity {
             textView_last_name.setText(bundle.getString("last_name"));
             textView_email.setText(bundle.getString("email"));
             textView_gender.setText(bundle.getString("gender"));
+            textView_avatar.setText(bundle.getString("image"));
 
             Glide.with(getApplicationContext())
                     .load(bundle.getString("image"))
@@ -82,9 +81,9 @@ public class SaveContactsToStorage extends AppCompatActivity {
         else {
 
 
-            addContactData.insertContactList(textView_first_name.getText().toString(), textView_last_name.getText().toString(), textView_email.getText().toString(), textView_gender.getText().toString());
+            addContactData.insertDataAnsw(textView_first_name.getText().toString(), textView_last_name.getText().toString(), textView_email.getText().toString(), textView_gender.getText().toString());
             Toast.makeText(getApplicationContext(), "Saved", Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(SaveContactsToStorage.this, RvAdapterContactFromStorage.class);
+            Intent intent = new Intent(SaveContactsToStorage.this, ContactFromStorageList.class);
             startActivity(intent);
             finish();
 

@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.SaveContactsToStorage">
+    android:orientation="vertical"
+    tools:context=".view.AddContact">
 
     <LinearLayout
         android:gravity="center"
@@ -45,8 +46,9 @@
 
         </TextView>
 
-        <TextView
-            android:id="@+id/tv_save_storage_first_name"
+        <EditText
+
+            android:id="@+id/et_add_storage_first_name"
             android:padding="5dp"
             android:gravity="left"
             android:layout_marginLeft="10dp"
@@ -55,7 +57,7 @@
             android:layout_height="wrap_content"
             >
 
-        </TextView>
+        </EditText>
         <TextView
             android:layout_marginLeft="10dp"
             android:textStyle="normal"
@@ -70,17 +72,17 @@
             android:text="Last Name">
 
         </TextView>
-        <TextView
+        <EditText
             android:padding="5dp"
             android:gravity="left"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:id="@+id/tv_save_storage_last_name"
+            android:id="@+id/et_add_storage_last_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             >
 
-        </TextView>
+        </EditText>
         <TextView
             android:textStyle="normal"
             android:layout_marginTop="10dp"
@@ -96,9 +98,9 @@
 
         </TextView>
 
-        <TextView
+        <EditText
             android:padding="5dp"
-            android:id="@+id/tv_save_storage_email"
+            android:id="@+id/et_add_storage_email"
             android:gravity="left"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
@@ -106,7 +108,7 @@
             android:layout_height="wrap_content"
             >
 
-        </TextView>
+        </EditText>
         <TextView
             android:layout_marginLeft="10dp"
             android:textStyle="normal"
@@ -121,79 +123,23 @@
             android:text="Gender">
 
         </TextView>
-        <TextView
+        <EditText
             android:padding="5dp"
             android:gravity="left"
-            android:id="@+id/tv_save_storage_gender"
+            android:id="@+id/et_add_storage_gender"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             >
 
-        </TextView>
+        </EditText>
 
-
-        <TextView
-            android:layout_marginLeft="10dp"
-            android:textStyle="normal"
-            android:layout_marginTop="10dp"
-            android:textSize="12dp"
-            android:padding="5dp"
-            android:textColor="@color/FontColor"
-            android:layout_gravity="center"
-            android:gravity="left"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Add Image">
-
-        </TextView>
-        <TextView
-            android:layout_marginLeft="10dp"
-            android:textStyle="normal"
-            android:layout_marginTop="10dp"
-            android:textSize="12dp"
-            android:padding="5dp"
-            android:textColor="@color/FontColor"
-            android:layout_gravity="center"
-            android:gravity="left"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Image Url">
-
-        </TextView>
-
-
-        <TextView
-            android:id="@+id/tv_image_url_avatar"
-            android:layout_marginLeft="10dp"
-            android:textStyle="normal"
-            android:layout_marginTop="10dp"
-            android:textSize="12dp"
-            android:padding="5dp"
-            android:textColor="@color/FontColor"
-            android:layout_gravity="center"
-            android:gravity="left"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            >
-
-        </TextView>
-
-
-        <ImageView
-            android:id="@+id/iv_save_storage_image"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:src="@drawable/ic_baseline_person_24"
-            >
-
-        </ImageView>
 
 
 
         <TextView
-            android:id="@+id/tv_save_storage_submit"
+            android:id="@+id/tv_add_storage_submit"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:textStyle="bold"
@@ -215,4 +161,5 @@
 
     </LinearLayout>
 
-</ScrollView>
+
+</LinearLayout>

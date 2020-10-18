@@ -18,7 +18,7 @@ public class PojoContacts {
         this.lastNameContact = lastNameContact;
         this.emailUserContact = emailUserContact;
         this.genderUserContact = genderUserContact;
-        //this.fotoUserContact = fotoUserContact;
+
     }
 
     public int getIdContact() {
